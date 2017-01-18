@@ -3,8 +3,8 @@ echo "Installing Karaf"
 
 HOME_DIR=$1
 
-if [ -f "$HOME_DIR/islandora/install/configs/variables" ]; then
-  . "$HOME_DIR"/islandora/install/configs/variables
+if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
+  . "$HOME_DIR"/islandora/configs/variables
 fi
 
 if [ ! -f "$DOWNLOAD_DIR/apache-karaf-${KARAF_VERSION}.tar.gz" ]; then

@@ -2,8 +2,8 @@
 
 HOME_DIR=$1
 
-if [ -f "$HOME_DIR/islandora/install/configs/variables" ]; then
-  . "$HOME_DIR"/islandora/install/configs/variables
+if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
+  . "$HOME_DIR"/islandora/configs/variables
 fi
 
 if [ ! -d "$DOWNLOAD_DIR" ]; then
@@ -15,7 +15,7 @@ cd "$HOME_DIR"
 # Set apt-get for non-interactive mode
 export DEBIAN_FRONTEND=noninteractive
 
-cp "$HOME_DIR"/islandora/install/configs/motd /etc/motd
+cp "$HOME_DIR"/islandora/configs/motd /etc/motd
 
 # Update all the things.
 apt-get -y -qq update && apt-get -y -qq upgrade

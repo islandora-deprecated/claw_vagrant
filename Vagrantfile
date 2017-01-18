@@ -39,7 +39,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Setup the shared folder
   home_dir = "/home/ubuntu"
-  config.vm.synced_folder "../", home_dir + "/islandora"
+  config.vm.synced_folder ".", home_dir + "/islandora"
 
   config.vm.network :forwarded_port, guest: 8080, host: 8080 # Tomcat
   config.vm.network :forwarded_port, guest: 8181, host: 8181 # Karaf

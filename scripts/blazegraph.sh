@@ -3,8 +3,8 @@ echo "Installing BlazeGraph's NanoSparqlServer"
 
 HOME_DIR=$1
 
-if [ -f "$HOME_DIR/islandora/install/configs/variables" ]; then
-  . "$HOME_DIR"/islandora/install/configs/variables
+if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
+  . "$HOME_DIR"/islandora/configs/variables
 fi
 
 if [ ! -f "$DOWNLOAD_DIR/bigdata-$BLAZEGRAPH_VERSION.war" ]; then

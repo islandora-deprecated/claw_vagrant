@@ -1,12 +1,12 @@
 #!/bin/bash
 
 HOME_DIR=$1
-DOWNLOAD_DIR="$HOME_DIR/islandora/install/downloads"
+DOWNLOAD_DIR="$HOME_DIR/islandora/downloads"
 FEDORA_VERSION=4.7.0
 KARAF_VERSION=4.0.5
 KARAF_DIR="/opt/karaf"
 KARAF_CLIENT="$KARAF_DIR/bin/client"
-KARAF_CONFIGS="$HOME_DIR/islandora/install/configs/karaf/"
+KARAF_CONFIGS="$HOME_DIR/islandora/configs/karaf/"
 CAMEL_VERSION=4.4.0
 SOLR_VERSION=6.2.1
 BLAZEGRAPH_VERSION=2.1.4

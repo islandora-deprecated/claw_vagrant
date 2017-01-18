@@ -4,8 +4,8 @@ echo "Installing Drupal Console."
 
 HOME_DIR=$1                    
   
-if [ -f "$HOME_DIR/islandora/install/configs/variables" ]; then
-  . "$HOME_DIR"/islandora/install/configs/variables
+if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
+  . "$HOME_DIR"/islandora/configs/variables
 fi
 
 cd /tmp
@@ -22,7 +22,7 @@ fi
 if [ -f ".console/config.yml" ]; then
   rm .console/config.yml
 fi
-cp $HOME_DIR/islandora/install/configs/config.yml $HOME_DIR/.console/config.yml
+cp $HOME_DIR/islandora/configs/config.yml $HOME_DIR/.console/config.yml
 chown -hR ubuntu:ubuntu /home/ubuntu/.console
 sed -i -e "\$asource \"$HOME/.console/console.rc\" 2>/dev/null" $HOME/.bashrc
 

@@ -2,8 +2,8 @@
 echo "RUNNING POST-INSTALL COMMANDS"
 
 HOME_DIR=$1
-if [ -f "$HOME_DIR/islandora/install/configs/variables" ]; then
-  . "$HOME_DIR"/islandora/install/configs/variables
+if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
+  . "$HOME_DIR"/islandora/configs/variables
 fi
 
 # Chown and chmod tomcat directory

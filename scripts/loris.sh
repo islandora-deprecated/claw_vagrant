@@ -3,8 +3,8 @@ echo "Installing Loris IIIF Image Server"
 
 HOME_DIR=$1
 
-if [ -f "$HOME_DIR/islandora/install/configs/variables" ]; then
-  . "$HOME_DIR"/islandora/install/configs/variables
+if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
+  . "$HOME_DIR"/islandora/configs/variables
 fi
 
 # Kakadu
@@ -43,8 +43,8 @@ pip install mock
 pip install responses
 useradd -d /var/www/loris2 -s /sbin/false loris
 a2enmod headers expires
-cp "$HOME_DIR/islandora/install/configs/002-loris.conf" "/etc/apache2/sites-enabled/"
-cp "$HOME_DIR/islandora/install/configs/kdu_libs.conf" "/etc/ld.so.conf.d/kdu_libs.conf"
+cp "$HOME_DIR/islandora/configs/002-loris.conf" "/etc/apache2/sites-enabled/"
+cp "$HOME_DIR/islandora/configs/kdu_libs.conf" "/etc/ld.so.conf.d/kdu_libs.conf"
 ldconfig
 mkdir /usr/local/share/images
 

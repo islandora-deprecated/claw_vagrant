@@ -3,8 +3,8 @@ echo "Installing Fedora."
 
 HOME_DIR=$1
 
-if [ -f "$HOME_DIR/islandora/install/configs/variables" ]; then
-  . "$HOME_DIR"/islandora/install/configs/variables
+if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
+  . "$HOME_DIR"/islandora/configs/variables
 fi
 
 if [ ! -f "$DOWNLOAD_DIR/fcrepo-$FEDORA_VERSION.war" ]; then
@@ -20,8 +20,8 @@ fi
 
 cd /opt
 mkdir -p fcrepo/configs
-cp -v $HOME_DIR/islandora/install/configs/repository.json /opt/fcrepo/configs
-cp -v $HOME_DIR/islandora/install/configs/claw.cnd /opt/fcrepo/configs
+cp -v $HOME_DIR/islandora/configs/repository.json /opt/fcrepo/configs
+cp -v $HOME_DIR/islandora/configs/claw.cnd /opt/fcrepo/configs
 chown -hR tomcat7:tomcat7 /opt/fcrepo
 
 chown tomcat7:tomcat7 /var/lib/tomcat7/fcrepo4-data
