@@ -77,9 +77,6 @@ $DRUSH_CMD en -y media_entity_image
 # Devel
 $DRUSH_CMD -y en devel
 
-# Web Profiler
-$DRUSH_CMD en -y webprofiler
-
 # Apache Solr
 ## https://www.drupal.org/node/2613470
 $DRUSH_CMD -y pm-uninstall search
