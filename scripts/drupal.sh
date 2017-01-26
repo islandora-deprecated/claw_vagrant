@@ -89,8 +89,39 @@ $DRUSH_CMD en -y islandora_collection
 $DRUSH_CMD -y en bootstrap
 $DRUSH_CMD -y config-set system.theme default bootstrap
 
+
+#If libraries folder does not exist, create
+if [ ! -d "$DRUPAL_HOME/web/libraries" ]; then
+  mkdir "$DRUPAL_HOME/web/libraries"
+fi
+cd $DRUPAL_HOME/web/libraries || exit
+
+# D3.js - WebProfiler dependency
+if [ ! -d "d3" ]; then
+  mkdir "d3"
+fi
+cd "d3"
+wget https://github.com/d3/d3/releases/download/v4.4.4/d3.zip
+unzip d3.zip
+rm *.zip
+
+# highlightjs - WebProfiler dependency
+# WebProfiler expects the js file to be named highlight.pack.js
+# More info: https://www.drupal.org/node/2635734
+cd ".."
+wget https://github.com/isagalaev/highlight.js/archive/9.9.0.zip
+unzip 9.9.0.zip
+
+mv "highlight.js-9.9.0" "highlightjs"
+cd "highlightjs"
+cp -R src/* ./
+mv "highlight.js" "highlight.pack.js"
+cd ".."
+rm *.zip
+
 # Permissions
 chown -R www-data:www-data "$DRUPAL_HOME"
 chmod -R g+w "$DRUPAL_HOME"
+chmod -R 755 "$DRUPAL_HOME"/web/libraries
 usermod -a -G www-data ubuntu
 
