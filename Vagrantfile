@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
   config.vm.provider "virtualbox" do |v|
     v.name = "Islandora CLAW"
-    config.vm.network :forwarded_port, guest: 80, host: 8000 # Apache
+    config.vm.network :forwarded_port, guest: 8000, host: 8000 # Apache
   end
   
   config.vm.hostname = $hostname
@@ -65,9 +65,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :path => "./scripts/fcrepo.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/blazegraph.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/karaf.sh", :args => home_dir
-  config.vm.provision :shell, :path => "./scripts/fcrepo-camel-toolbox.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/alpaca.sh", :args => home_dir
+  config.vm.provision :shell, :path => "./scripts/fcrepo-camel-toolbox.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/islandora-karaf-components.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/config.sh", :args => home_dir
+  config.vm.provision :shell, :path => "./scripts/api-x.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/post-install.sh", :args => home_dir
 end

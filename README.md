@@ -90,14 +90,13 @@ The default VM login details are:
 - Apache 2.4.18
 - Tomcat 7.0.68.0
 - Solr 6.2.1
-- Camel 2.15.1
-- Fedora 4.6.0
-- Fedora Camel Component 4.4.0
-- BlazeGraph 1.5.1
+- Camel 2.18.1
+- Fedora 4.7.0
+- Fedora Camel Component 4.5.0
+- BlazeGraph 2.4.1
 - Karaf 4.0.5
-- Alpaca 0.0.1-SNAPSHOT
+- Alpaca 0.1.1-SNAPSHOT
 - Islandora 8.x-1.x
-- Loris HEAD
 - PHP 7.0.8
 - Java 8 (Oracle)
 
