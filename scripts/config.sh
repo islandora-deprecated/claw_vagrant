@@ -15,6 +15,8 @@ fi
 if [ -f "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg" ]; then
   # Update fcrepo triplestore indexing config
   sed -i 's|triplestore.baseUrl=http://localhost:8080/fuseki/test/update|triplestore.baseUrl=http://localhost:8080/bigdata/sparql|' "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg"
+  sed -i 's|input.stream=broker:topic:fedora|input.stream=activemq:queue:fcrepo-indexing-triplestore|' "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg"
+  sed -i 's|triplestore.reindex.stream=broker:queue:triplestore.reindex|triplestore.reindex.stream=activemq:queue:triplestore.reindex|' "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg"
 else
   echo "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg still doesn't exist, this is an ERROR!"
 fi
@@ -29,7 +31,7 @@ fi
 
 if [ -f "$KARAF_DIR/etc/edu.amherst.acdc.connector.broadcast.cfg" ]; then
   # Update fcrepo broadcaster config
-  sed -i 's|message.recipients=|message.recipients=activemq:queue:acrepo-connector-idiomatic|' "$KARAF_DIR/etc/edu.amherst.acdc.connector.broadcast.cfg"
+  sed -i 's|message.recipients=|message.recipients=activemq:queue:acrepo-connector-idiomatic,activemq:queue:fcrepo-indexing-triplestore|' "$KARAF_DIR/etc/edu.amherst.acdc.connector.broadcast.cfg"
 else
   echo "$KARAF_DIR/etc/edu.amherst.acdc.connector.broadcast.cfg still doesn't exist, this is an ERROR!"
 fi
@@ -48,4 +50,13 @@ if [ -f "$KARAF_DIR/etc/ca.islandora.alpaca.connector.broadcast.cfg" ]; then
   sed -i 's|input.stream=broker:queue:islandora-connector-broadcast|input.stream=activemq:queue:islandora-connector-broadcast|' "$KARAF_DIR/etc/ca.islandora.alpaca.connector.broadcast.cfg"
 else
   echo "$KARAF_DIR/etc/ca.islandora.alpaca.connector.broadcast.cfg still doesn't exist, this is an ERROR!"
+fi
+
+if [ -f "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg" ]; then
+  # Update islandora triplestore indexer config
+  sed -i 's|input.stream=broker:queue:islandora-indexing-triplestore|input.stream=activemq:queue:islandora-indexing-triplestore|' "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg"
+  sed -i 's|drupal.username=|drupal.username=admin|' "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg"
+  sed -i 's|drupal.password=|drupal.password=islandora|' "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg"
+else
+  echo "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg still doesn't exist, this is an ERROR!"
 fi

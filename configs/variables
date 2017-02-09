@@ -7,7 +7,6 @@ KARAF_VERSION=4.0.5
 KARAF_DIR="/opt/karaf"
 KARAF_CLIENT="$KARAF_DIR/bin/client"
 KARAF_CONFIGS="$HOME_DIR/islandora/configs/karaf/"
-CAMEL_VERSION=4.4.0
 SOLR_VERSION=6.2.1
 BLAZEGRAPH_VERSION=2.1.4
 DRUPAL_HOME="/var/www/html/drupal"
