@@ -19,8 +19,6 @@ wget http://downloads.mysql.com/archives/get/file/mysql-connector-java-"$MYSQL_C
 tar zxvf mysql-connector-java-"$MYSQL_CONNECTOR_VERSION".tar.gz
 cp mysql-connector-java-"$MYSQL_CONNECTOR_VERSION"/mysql-connector-java-"$MYSQL_CONNECTOR_VERSION"-bin.jar "$KARAF_DIR"/deploy
 
-echo "Installing ID Mapping Service"
-$KARAF_CLIENT -f $KARAF_CONFIGS/islandora_id_mapping_service.script
-
-echo "Installing Alpaca"
+echo "Installing Karaf Features"
 $KARAF_CLIENT -f $KARAF_CONFIGS/alpaca.script
+

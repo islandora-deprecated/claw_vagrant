@@ -25,9 +25,5 @@ sed -i 's|log4j.appender.FILE.File=${catalina.home}/logs/fits-service.log|log4j.
 cd /var/lib/tomcat7
 service tomcat7 restart
 
-# Cycle karaf and watch the maven bundles
-service karaf-service restart
-sleep 60
-
 # Clear drupal cache
 $DRUSH_CMD cache-rebuild

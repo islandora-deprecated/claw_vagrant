@@ -1,2 +1,0 @@
-feature:repo-add mvn:org.fcrepo.apix/fcrepo-api-x-karaf/0.1.0/xml/features
-feature:install fcrepo-api-x

@@ -36,8 +36,7 @@ VirtualBox:
 
 1. `git clone https://github.com/Islandora-CLAW/claw_vagrant`
 2. `cd claw_vagrant`
-3. Visit https://github.com/settings/tokens and get an oauth token (check the 'repos' checkbox when making it) and place it [here](https://github.com/Islandora-CLAW/claw_vagrant/blob/master/configs/variables#L21)
-4. `vagrant up`
+3. `vagrant up`
 
 DigitalOcean:
 
@@ -48,8 +47,7 @@ DigitalOcean:
   * `DIGITALOCEAN_TOKEN` -- Your DigitalOcean API token
   * `DIGITALOCEAN_KEYNAME` -- Your DigitalOcean ssh key name
   * `DIGITALOCEAN_KEYPATH` -- Path to your ssh keys that you've setup with DigitalOcean
-5. Visit https://github.com/settings/tokens and get an oauth token (check the 'repos' checkbox when making it) and place it [here](https://github.com/Islandora-CLAW/claw_vagrant/blob/master/configs/variables#L21)
-6. `vagrant up --provider=digital_ocean`
+5. `vagrant up --provider=digital_ocean`
 
 ## Connect
 
