@@ -19,7 +19,6 @@ cd /var/www/html
 # Download Drupal
 git clone https://github.com/Islandora-CLAW/drupal-project drupal
 cd "$DRUPAL_HOME"
-rm composer.lock
 composer install
 
 # Setup drush and drupal console aliases
