@@ -1,3 +1,7 @@
+# ![Islandora CLAW Vagrant](https://cloud.githubusercontent.com/assets/2371345/22829608/c44c500c-ef79-11e6-93f6-e2222b60fbc4.png) Islandora CLAW Vagrant
+[![Contribution Guidelines](http://img.shields.io/badge/CONTRIBUTING-Guidelines-blue.svg)](./CONTRIBUTING.md)
+[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./LICENSE)
+
 ## Introduction
 
 The is a development environment virtual machine for the Islandora and Fedora 4 project. It should work on any operating system that supports VirtualBox and Vagrant.
@@ -102,10 +106,10 @@ The default VM login details are:
 
 If you receive errors involving `\r` (end of line) you have two options:
 
-1. Clone down the current development branch using `--single-branch`.
+1. Clone the project using `--single-branch`.
 
   ```
-  git clone --single-branch --branch sprint-002 git@github.com:Islandora-CLAW/CLAW.git <optional directory name>
+  git clone --single-branch git@github.com:Islandora-CLAW/claw_vagrant.git
   ```
   A benifit to this approach is that files created or edited on a Windows environment will be pushed back to your fork with appropriate `LF` endings.
 
@@ -120,3 +124,27 @@ If you receive errors involving `\r` (end of line) you have two options:
   autocrlf = false
   ```
   Remove and clone again. This will prevent Windows git clients from automatically replacing Unix line endings LF with Windows line endings CRLF.
+
+## Sponsors
+
+* UPEI
+* discoverygarden inc.
+* LYRASIS
+* McMaster University
+* University of Limerick
+* York University
+* University of Manitoba
+* Simon Fraser University
+* PALS
+* American Philosophical Society
+* Common Media Inc.
+
+## Maintainers
+
+* [Nick Ruest](https://github.com/ruebot)
+
+## Development
+
+If you would like to contribute, please get involved by attending our weekly [Tech Call](https://github.com/Islandora-CLAW/CLAW/wiki). We love to hear from you!
+
+If you would like to contribute code to the project, you need to be covered by an Islandora Foundation [Contributor License Agreement](http://islandora.ca/sites/default/files/islandora_cla.pdf) or [Corporate Contributor Licencse Agreement](http://islandora.ca/sites/default/files/islandora_ccla.pdf). Please see the [Contributors](http://islandora.ca/resources/contributors) pages on Islandora.ca for more information.

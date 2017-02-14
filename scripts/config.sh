@@ -14,7 +14,7 @@ fi
 
 if [ -f "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg" ]; then
   # Update fcrepo triplestore indexing config
-  sed -i 's|triplestore.baseUrl=http://localhost:8080/fuseki/test/update|triplestore.baseUrl=http://localhost:8080/bigdata/sparql|' "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg"
+  sed -i 's|triplestore.baseUrl=http://localhost:8080/fuseki/test/update|triplestore.baseUrl=http://localhost:8080/bigdata/namespace/islandora/sparql|' "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg"
   sed -i 's|input.stream=broker:topic:fedora|input.stream=activemq:queue:fcrepo-indexing-triplestore|' "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg"
   sed -i 's|triplestore.reindex.stream=broker:queue:triplestore.reindex|triplestore.reindex.stream=activemq:queue:triplestore.reindex|' "$KARAF_DIR/etc/org.fcrepo.camel.indexing.triplestore.cfg"
 else
@@ -55,6 +55,7 @@ fi
 if [ -f "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg" ]; then
   # Update islandora triplestore indexer config
   sed -i 's|input.stream=broker:queue:islandora-indexing-triplestore|input.stream=activemq:queue:islandora-indexing-triplestore|' "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg"
+  sed -i 's|triplestore.baseUrl=http://localhost:8080/bigdata/namespace/kb/sparql|triplestore.baseUrl=http://localhost:8080/bigdata/namespace/islandora/sparql|' "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg"
   sed -i 's|drupal.username=|drupal.username=admin|' "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg"
   sed -i 's|drupal.password=|drupal.password=islandora|' "$KARAF_DIR/etc/ca.islandora.alpaca.indexing.triplestore.cfg"
 else
