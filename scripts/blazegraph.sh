@@ -29,3 +29,8 @@ sleep 15
 sed -i 's|log4j.appender.ruleLog.File=rules.log|log4j.appender.ruleLog.File=/var/log/tomcat7/rules.log|g' /var/lib/tomcat7/webapps/bigdata/WEB-INF/classes/log4j.properties
 sed -i 's|com.bigdata.journal.AbstractJournal.file=blazegraph.jnl|com.bigdata.journal.AbstractJournal.file=/opt/blazegraph/blazegraph.jnl|g' /var/lib/tomcat7/webapps/bigdata/WEB-INF/RWStore.properties
 service tomcat7 restart
+
+cd "$HOME_DIR"/islandora/configs
+echo "Creating namespace with inferencing"
+curl -v -X POST -H 'Content-Type:text/plain' --data-binary @blazegraph.properties http://localhost:8080/bigdata/namespace
+curl -v -X POST -H 'Content-Type:text/plain' --data-binary @inference.nt http://localhost:8080/bigdata/namespace/islandora/sparql
