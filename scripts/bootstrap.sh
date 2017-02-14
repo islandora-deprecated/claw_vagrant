@@ -43,13 +43,13 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 apt-get -y -qq install maven
 
 # Tomcat
-apt-get -y -qq install tomcat7 tomcat7-admin
-usermod -a -G tomcat7 ubuntu
-sed -i '$i<user username="islandora" password="islandora" roles="manager-gui"/>' /etc/tomcat7/tomcat-users.xml
-chown -R tomcat7:tomcat7 /var/lib/tomcat7
-chown -R tomcat7:tomcat7 /var/log/tomcat7
-chmod -R g+w /var/lib/tomcat7
-chmod -R g+w /var/log/tomcat7
+apt-get -y -qq install tomcat8 tomcat8-admin
+usermod -a -G tomcat8 ubuntu
+sed -i '$i<user username="islandora" password="islandora" roles="manager-gui"/>' /etc/tomcat8/tomcat-users.xml
+chown -R tomcat8:tomcat8 /var/lib/tomcat8
+chown -R tomcat8:tomcat8 /var/log/tomcat8
+chmod -R g+w /var/lib/tomcat8
+chmod -R g+w /var/log/tomcat8
 
 # Wget and curl
 apt-get -y -qq install wget curl
@@ -70,4 +70,4 @@ debconf-set-selections <<< "postfix postfix/mailname string islandora-fedora4.or
 debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
 
 # Set JAVA_HOME -- Java8 set-default does not seem to do this.
-sed -i 's|#JAVA_HOME=/usr/lib/jvm/openjdk-6-jdk|JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64|g' /etc/default/tomcat7
+sed -i 's|#JAVA_HOME=/usr/lib/jvm/openjdk-6-jdk|JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64|g' /etc/default/tomcat8

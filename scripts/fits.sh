@@ -19,12 +19,12 @@ fi
 
 unzip "$DOWNLOAD_DIR/fits-$FITS_VERSION.zip" -d /opt
 mv /opt/fits-$FITS_VERSION /opt/fits
-chown tomcat7:tomcat7 /opt/fits
+chown tomcat8:tomcat8 /opt/fits
 
-cp "$DOWNLOAD_DIR/fits-$FITS_WS_VERSION.war" /var/lib/tomcat7/webapps/fits.war
-chown tomcat7:tomcat7 /var/lib/tomcat7/webapps/fits.war
+cp "$DOWNLOAD_DIR/fits-$FITS_WS_VERSION.war" /var/lib/tomcat8/webapps/fits.war
+chown tomcat8:tomcat8 /var/lib/tomcat8/webapps/fits.war
 
-sed -i '$ifits.home=/opt/fits' /etc/tomcat7/catalina.properties
-sed -i '$ishared.loader=${fits.home}/lib/*.jar' /etc/tomcat7/catalina.properties
+sed -i '$ifits.home=/opt/fits' /etc/tomcat8/catalina.properties
+sed -i '$ishared.loader=${fits.home}/lib/*.jar' /etc/tomcat8/catalina.properties
 
-service tomcat7 restart
+service tomcat8 restart

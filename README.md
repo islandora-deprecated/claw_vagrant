@@ -90,7 +90,7 @@ The default VM login details are:
 - Drupal 8.1.10
 - MySQL 5.7.15
 - Apache 2.4.18
-- Tomcat 7.0.68.0
+- Tomcat 8.0.32.0
 - Solr 6.2.1
 - Camel 2.18.1
 - Fedora 4.7.0
