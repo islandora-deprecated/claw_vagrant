@@ -1,0 +1,3 @@
+<sites version='1'>
+        <site algorithm='RS256' encoding='PEM' path='/home/ubuntu/auth/public.key' default='true'/>
+</sites>

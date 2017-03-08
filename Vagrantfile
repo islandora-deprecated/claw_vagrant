@@ -64,6 +64,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :path => "./scripts/drupal.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/fcrepo.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/blazegraph.sh", :args => home_dir
+  config.vm.provision :shell, :path => "./scripts/syn.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/karaf.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/alpaca.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/islandora-karaf-components.sh", :args => home_dir
