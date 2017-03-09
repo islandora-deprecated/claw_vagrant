@@ -9,7 +9,7 @@ if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
 fi
 
 cd "$HOME_DIR"
-git clone https://github.com/jonathangreen/Syn.git
+git clone https://github.com/Islandora-CLAW/Syn.git
 cd Syn
 chown -R ubuntu:ubuntu "$HOME_DIR/Syn"
 sudo -u ubuntu ./gradlew build
