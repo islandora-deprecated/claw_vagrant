@@ -5,8 +5,8 @@
 VAGRANTFILE_API_VERSION = "2"
 
 $cpus   = ENV.fetch("ISLANDORA_VAGRANT_CPUS", "1")
-$memory = ENV.fetch("ISLANDORA_VAGRANT_MEMORY", "2048")
-$hostname = ENV.fetch("ISLANDORA_VAGRANT_HOSTNAME", "islandora-deux")
+$memory = ENV.fetch("ISLANDORA_VAGRANT_MEMORY", "3072")
+$hostname = ENV.fetch("ISLANDORA_VAGRANT_HOSTNAME", "claw")
 $virtualBoxDescription = ENV.fetch("ISLANDORA_VAGRANT_VIRTUALBOXDESCRIPTION", "IslandoraCLAW")
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
