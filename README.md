@@ -42,17 +42,6 @@ VirtualBox:
 2. `cd claw_vagrant`
 3. `vagrant up`
 
-DigitalOcean:
-
-1. `git clone https://github.com/Islandora-CLAW/claw_vagrant`
-2. `cd claw_vagrant`
-3. `vagrant plugin install vagrant-digitalocean`
-4. Set the following environment variables:
-  * `DIGITALOCEAN_TOKEN` -- Your DigitalOcean API token
-  * `DIGITALOCEAN_KEYNAME` -- Your DigitalOcean ssh key name
-  * `DIGITALOCEAN_KEYPATH` -- Path to your ssh keys that you've setup with DigitalOcean
-5. `vagrant up --provider=digital_ocean`
-
 ## Connect
 
 You can connect to the machine via the browser at [http://localhost:8000](http://localhost:8000).

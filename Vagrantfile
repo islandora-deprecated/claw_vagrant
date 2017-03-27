@@ -19,20 +19,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   config.vm.hostname = $hostname
- 
-  # This should work fine out of the box if environment variables are declared
-  config.vm.provider :digital_ocean do |provider, override|
-    provider.ssh_key_name = ENV['DIGITALOCEAN_KEYNAME']
-    override.ssh.private_key_path = ENV['DIGITALOCEAN_KEYPATH']
-    override.ssh.username = "vagrant"
-    override.vm.box = 'digital_ocean'
-    override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
-    provider.token = ENV['DIGITALOCEAN_TOKEN']
-    provider.image = 'ubuntu-14-04-x64'
-    provider.region = 'tor1'
-    provider.size = '4gb'
-    override.vm.network :forwarded_port, guest: 80, host: 80
-  end
   
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu/xenial64"
