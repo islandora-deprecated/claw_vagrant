@@ -63,6 +63,14 @@ for MAN_FILE in $MAN_FILES; do gzip /usr/share/man/man1/"${MAN_FILE##*/}"; done
 # More helpful packages
 apt-get -y -qq install htop tree zsh fish unzip
 
+# Install imagemagick with jp2 support. 
+# JP2 isn't included in Ubuntu imagemagick as per this launchpad ticket:
+# https://bugs.launchpad.net/ubuntu/+source/openjpeg2/+bug/711061
+# Looks like there is some effort to bring it in eventually.
+apt-add-repository -yu ppa:lyrasis/imagemagick-jp2
+apt-get -f install -y --allow-downgrades imagemagick=8:6.8.9.9-7ubuntu5.3ppa1 imagemagick-6.q16=8:6.8.9.9-7ubuntu5.3ppa1 imagemagick-common=8:6.8.9.9-7ubuntu5.3ppa1 libmagickcore-6.q16-2=8:6.8.9.9-7ubuntu5.3ppa1 libmagickcore-6.q16-2-extra=8:6.8.9.9-7ubuntu5.3ppa1 libmagickwand-6.q16-2=8:6.8.9.9-7ubuntu5.3ppa1
+apt-mark hold imagemagick imagemagick-6.q16 imagemagick-common libmagickcore-6.q16-2 libmagickcore-6.q16-2-extra libmagickwand-6.q16-2 
+
 # Set some params so it's non-interactive for the lamp-server install
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password islandora'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password islandora'
