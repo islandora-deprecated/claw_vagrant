@@ -46,32 +46,51 @@ VirtualBox:
 
 You can connect to the machine via the browser at [http://localhost:8000](http://localhost:8000).
 
+### Drupal
+
 The default Drupal login details are:
   
   * username: admin
   * password: islandora
 
-MySQL:
+### MySQL
   
   * username: root
   * password: islandora
 
-The Fedora 4 REST API can be accessed at [http://localhost:8080/fcrepo/rest](http://localhost:8080/fcrepo/rest).  It currently has authentication disabled.
+### Fedora4
 
-Tomcat Manager:
+The Fedora 4 REST API can be accessed at [http://localhost:8080/fcrepo/rest](http://localhost:8080/fcrepo/rest). 
+
+Authentication is done via [Syn](https://github.com/Islandora-CLAW/Syn) using [JWT](https://jwt.io) tokens.
+
+### Tomcat Manager
   
   * username: islandora
   * password: islandora
+
+### SSH
 
 You can connect to the machine via ssh:
 
   * `vagrant ssh`
   * `ssh -p 2222 ubuntu@localhost`
 
+### VM
+
 The default VM login details are:
   
   * username: ubuntu
   * password: ubuntu
+  
+### Cantaloupe
+
+You can access the Canataloupe admin interface at: http://localhost:8080/cantaloupe/admin
+
+  * username: admin
+  * password: islandora
+  
+You can access the IIIF interface at: http://localhost:8080/cantaloupe/iiif/2/
 
 ## Environment
 
@@ -90,6 +109,7 @@ The default VM login details are:
 - Islandora 8.x-1.x
 - PHP 7.0.15
 - Java 8 (Oracle)
+- Cantaloupe IIIF Server v3.3
 
 ## Windows Troubleshooting
 
