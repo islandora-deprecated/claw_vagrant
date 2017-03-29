@@ -17,7 +17,7 @@ if [ ! -f "$DOWNLOAD_DIR/fits-$FITS_WS_VERSION.war" ]; then
   wget -q -O "$DOWNLOAD_DIR/fits-$FITS_WS_VERSION.war" "http://projects.iq.harvard.edu/files/fits/files/fits-$FITS_WS_VERSION.war"
 fi
 
-unzip "$DOWNLOAD_DIR/fits-$FITS_VERSION.zip" -d /opt
+unzip -q "$DOWNLOAD_DIR/fits-$FITS_VERSION.zip" -d /opt
 mv /opt/fits-$FITS_VERSION /opt/fits
 chown tomcat8:tomcat8 /opt/fits
 
