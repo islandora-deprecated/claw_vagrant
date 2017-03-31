@@ -15,3 +15,12 @@ sed -i '$idate.timezone=America/Toronto' /etc/php/7.0/cli/php.ini
 # Have Apache listen on port 8000
 sed -i 's|Listen 80|Listen 8000|g' /etc/apache2/ports.conf
 sed -i 's|<VirtualHost \*\:80>|<VirtualHost \*\:8000>|' /etc/apache2/sites-enabled/000-default.conf
+
+#Bind external port for mysql
+printf "\n[mysqld]\nbind-address = 0.0.0.0" >> /etc/mysql/my.cnf
+
+#Grant permissions to root user
+mysql --defaults-extra-file=/etc/mysql/debian.cnf -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'islandora';
+FLUSH PRIVILEGES;"
+
+sudo service mysqld restart
