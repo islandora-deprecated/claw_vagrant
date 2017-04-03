@@ -23,4 +23,4 @@ printf "\n[mysqld]\nbind-address = 0.0.0.0" >> /etc/mysql/my.cnf
 mysql --defaults-extra-file=/etc/mysql/debian.cnf -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'islandora';
 FLUSH PRIVILEGES;"
 
-sudo service mysqld restart
+service mysql restart
