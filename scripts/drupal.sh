@@ -62,6 +62,7 @@ $DRUSH_CMD en -y syslog
 $DRUSH_CMD en -y serialization
 $DRUSH_CMD en -y basic_auth
 $DRUSH_CMD en -y rest
+$DRUSH_CMD en -y simpletest
 
 # Islandora dependencies
 
