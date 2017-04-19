@@ -56,5 +56,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :path => "./scripts/alpaca.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/islandora-karaf-components.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/config.sh", :args => home_dir
+  config.vm.provision :shell, :path => "./scripts/crayfish.sh", :args => home_dir
   config.vm.provision :shell, :path => "./scripts/post-install.sh", :args => home_dir
+
 end

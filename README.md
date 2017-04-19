@@ -92,6 +92,14 @@ You can access the Canataloupe admin interface at: http://localhost:8080/cantalo
   
 You can access the IIIF interface at: http://localhost:8080/cantaloupe/iiif/2/
 
+### JWT
+
+CLAW uses JWT for authentication across the stack. Crayfish microservices, Fedora, and Drupal all use them. 
+Crayfish and Fedora have been set up to use a master token of `islandora` to make testing easier.  To use it, just set
+the following header in HTTP requests:
+
+  * `Authorization: Bearer islandora`
+  
 ## Environment
 
 - Ubuntu 16.04.2
