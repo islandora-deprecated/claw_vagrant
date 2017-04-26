@@ -1,6 +1,6 @@
-<sites version='1'>
+<config version='1'>
     <site algorithm='RS256' encoding='PEM' path='/home/ubuntu/auth/public.key' default='true'/>
     <token user='admin' roles='admin'>
         islandora
     </token>
-</sites>
+</config>

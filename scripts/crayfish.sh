@@ -15,13 +15,16 @@ cd Crayfish
 for D in */; do
     (cd $D; composer install)
     cp "$HOME_DIR/islandora/configs/Syn/syn-settings.xml" $D
-    sed -i "s/'loglevel' => 'NONE'/'loglevel' => 'DEBUG'/" $D/cfg/cfg.php
-    sed -i "s/'security enabled' => false/'security enabled' => true/" $D/cfg/cfg.php
+    if [ ! -f "$D/cfg/config.yaml" ]; then
+      cp "$D/cfg/config.example.yaml" "$D/cfg/config.yaml"
+    fi
+    sed -i "s/level: NONE/level: DEBUG/" $D/cfg/config.yaml
+    sed -i "s/enable: false/enable: true/" $D/cfg/config.yaml
+    sed -i "s/user: changeme/user: root/" $D/cfg/config.yaml
+    sed -i "s/password: changeme/password: islandora/" $D/cfg/config.yaml
 done
 
 # Gemini
-sed -i "s/'user' => 'changeme'/'user' => 'root'/" Gemini/cfg/cfg.php
-sed -i "s/'password' => 'changeme'/'password' => 'islandora'/" Gemini/cfg/cfg.php
 mysql -u "$MYSQL_USER" -p"$MYSQL_PASS" < "$HOME_DIR/islandora/configs/gemini.sql"
 
 # Hypercube
