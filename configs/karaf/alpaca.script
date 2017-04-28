@@ -1,6 +1,5 @@
 feature:repo-add file:/home/ubuntu/Alpaca/karaf/build/resources/main/features.xml
 feature:repo-add mvn:org.fcrepo.apix/fcrepo-api-x-karaf/0.1.0/xml/features
-feature:repo-add mvn:edu.amherst.acdc/acrepo-karaf/1.0.8/xml/features
 
 feature:install fcrepo-service-activemq
 feature:install fcrepo-service-camel
@@ -9,8 +8,3 @@ feature:install islandora-connector-broadcast
 feature:install islandora-indexing-triplestore
 
 feature:install fcrepo-indexing-triplestore
-
-feature:install acrepo-services-mint
-feature:install acrepo-connector-broadcast
-feature:install acrepo-connector-idiomatic-mysql
-feature:install acrepo-connector-idiomatic
