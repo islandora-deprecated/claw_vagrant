@@ -84,6 +84,7 @@ $DRUSH_CMD en -y search_api
 
 $DRUSH_CMD en -y islandora
 $DRUSH_CMD en -y islandora_collection
+$DRUSH_CMD en -y islandora_image
 
 # Set default theme to bootstrap
 $DRUSH_CMD -y en bootstrap
