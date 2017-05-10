@@ -6,5 +6,6 @@ feature:install fcrepo-service-camel
 
 feature:install islandora-connector-broadcast
 feature:install islandora-indexing-triplestore
+feature:install islandora-indexing-fcrepo
 
 feature:install fcrepo-indexing-triplestore
