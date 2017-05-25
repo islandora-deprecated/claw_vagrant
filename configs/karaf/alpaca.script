@@ -1,5 +1,7 @@
+config:property-set -p org.fcrepo.apix.registry.http timeout.socket.ms 1000
+
 feature:repo-add file:/home/ubuntu/Alpaca/karaf/build/resources/main/features.xml
-feature:repo-add mvn:org.fcrepo.apix/fcrepo-api-x-karaf/0.1.0/xml/features
+feature:repo-add mvn:org.fcrepo.apix/fcrepo-api-x-karaf/0.2.0/xml/features
 
 feature:install fcrepo-service-activemq
 feature:install fcrepo-service-camel
@@ -7,5 +9,8 @@ feature:install fcrepo-service-camel
 feature:install islandora-connector-broadcast
 feature:install islandora-indexing-triplestore
 feature:install islandora-indexing-fcrepo
+
+feature:install islandora-http-client
+feature:install fcrepo-api-x
 
 feature:install fcrepo-indexing-triplestore
