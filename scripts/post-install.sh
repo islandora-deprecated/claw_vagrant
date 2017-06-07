@@ -27,3 +27,5 @@ service tomcat8 restart
 
 # Clear drupal cache
 $DRUSH_CMD cache-rebuild
+
+$KARAF_CLIENT -f $KARAF_CONFIGS/activemq-osgi-fix.script
