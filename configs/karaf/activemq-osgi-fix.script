@@ -1,9 +1,0 @@
-feature:uninstall islandora-connector-broadcast
-feature:uninstall islandora-indexing-triplestore
-feature:uninstall islandora-indexing-fcrepo
-feature:uninstall fcrepo-api-x
-
-feature:install islandora-connector-broadcast
-feature:install islandora-indexing-triplestore
-feature:install islandora-indexing-fcrepo
-feature:install fcrepo-api-x

@@ -83,6 +83,15 @@ The default VM login details are:
   * username: ubuntu
   * password: ubuntu
   
+### ActiveMQ
+
+The default ActiveMQ login details are:
+  
+  * username: admin
+  * password: admin
+
+You can access the ActiveMQ administrative interface at: http://localhost:8161/admin
+
 ### Cantaloupe
 
 You can access the Canataloupe admin interface at: http://localhost:8080/cantaloupe/admin
@@ -118,6 +127,7 @@ the following header in HTTP requests:
 - PHP 7.0.15
 - Java 8 (Oracle)
 - Cantaloupe IIIF Server v3.3
+- ActiveMQ 5.14.5
 
 ## Windows Troubleshooting
 

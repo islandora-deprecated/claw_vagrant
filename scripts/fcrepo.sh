@@ -20,15 +20,18 @@ fi
 
 cd /opt
 mkdir -p fcrepo/configs
-cp -v $HOME_DIR/islandora/configs/repository.json /opt/fcrepo/configs
-cp -v $HOME_DIR/islandora/configs/claw.cnd /opt/fcrepo/configs
+cp $HOME_DIR/islandora/configs/repository.json /opt/fcrepo/configs
+cp $HOME_DIR/islandora/configs/claw.cnd /opt/fcrepo/configs
 chown -hR tomcat8:tomcat8 /opt/fcrepo
 
 chown tomcat8:tomcat8 /var/lib/tomcat8/fcrepo4-data
 
 echo "CATALINA_OPTS=\"\${CATALINA_OPTS} -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/configs/repository.json\"" >> /etc/default/tomcat8;
 
-cp -v "$DOWNLOAD_DIR/fcrepo-$FEDORA_VERSION.war" /var/lib/tomcat8/webapps/fcrepo.war
+cp "$DOWNLOAD_DIR/fcrepo-$FEDORA_VERSION.war" /var/lib/tomcat8/webapps/fcrepo.war
 chown tomcat8:tomcat8 /var/lib/tomcat8/webapps/fcrepo.war
 sed -i 's#JAVA_OPTS="-Djava.awt.headless=true -Xmx128m -XX:+UseConcMarkSweepGC"#JAVA_OPTS="-Djava.awt.headless=true -Dfile.encoding=UTF-8 -server -Xms512m -Xmx1024m -XX:NewSize=256m -XX:MaxNewSize=256m -XX:PermSize=256m -XX:MaxPermSize=256m"#g' /etc/default/tomcat8
+service tomcat8 restart
+sleep 60
+cp "$HOME_DIR"/islandora/configs/activemq.xml /var/lib/tomcat8/webapps/fcrepo/WEB-INF/classes/config/activemq.xml
 service tomcat8 restart
