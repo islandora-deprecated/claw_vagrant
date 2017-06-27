@@ -1,7 +1,7 @@
 config:property-set -p org.fcrepo.apix.registry.http timeout.socket.ms 1000
 
 feature:repo-add file:/home/ubuntu/Alpaca/karaf/build/resources/main/features.xml
-feature:repo-add mvn:org.fcrepo.apix/fcrepo-api-x-karaf/0.2.0/xml/features
+feature:repo-add mvn:org.fcrepo.apix/fcrepo-api-x-karaf/LATEST/xml/features
 
 feature:install fcrepo-service-camel
 
