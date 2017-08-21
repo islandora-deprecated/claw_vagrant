@@ -81,6 +81,9 @@ $DRUSH_CMD -y en devel
 ## https://www.drupal.org/node/2613470
 $DRUSH_CMD -y pm-uninstall search
 $DRUSH_CMD en -y search_api
+$DRUSH_CMD en -y search_api_solr
+$DRUSH_CMD en -y search_api_solr_defaults
+$DRUSH_CMD en -y facets
 
 # Set default theme to carapace (and download dependencies, will composer-ize later)
 cd $DRUPAL_HOME
