@@ -85,6 +85,9 @@ $DRUSH_CMD en -y search_api_solr
 $DRUSH_CMD en -y search_api_solr_defaults
 $DRUSH_CMD en -y facets
 
+# Set default solr server to point to CLAW core
+$DRUSH_CMD -y config-set search_api.server.default_solr_server backend_config.connector_config.core CLAW
+
 # Set default theme to carapace (and download dependencies, will composer-ize later)
 cd $DRUPAL_HOME
 composer require "drupal/adaptivetheme:^2.0" "drupal/at_tools:^2.0" "drupal/layout_plugin:^1.0@alpha"
