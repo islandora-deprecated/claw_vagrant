@@ -109,6 +109,12 @@ the following header in HTTP requests:
 
   * `Authorization: Bearer islandora`
   
+### BlazeGraph (Bigdata)
+
+You can access the BlazeGraph interface at: http://localhost:8080/bigdata/
+
+You have to select the islandora namespace in the [namespaces tab](http://localhost:8080/bigdata/#namespaces) before you can execute queries.
+  
 ## Environment
 
 - Ubuntu 16.04.2
